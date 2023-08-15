@@ -1,4 +1,4 @@
-# Modelling the expression with differential expression
+# Modelling the expression with differential equations
 Here you can find some plotting scripts for the simulating models.
 
 ### Installation
