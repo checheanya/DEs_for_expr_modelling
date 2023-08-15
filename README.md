@@ -12,9 +12,8 @@ git clone https://github.com/checheanya/DEs_for_expr_modelling.git && cd DEs_for
 Create a `conda/mamba` environment with necessary packages and activate it:
 
 ```bash
-conda env create -n DE_dash
+conda env create -f environment.yml
 conda activate DE_dash
-pip install -r requirements.txt
 ```
 
 ### Usage
