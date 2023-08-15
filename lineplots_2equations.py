@@ -1,23 +1,15 @@
 # -*- coding: utf-8 -*-
 """## Imports"""
 
-pip install dash plotly
-
 import numpy as np
-  import pandas as pd
-  from scipy.integrate import solve_ivp
-  import itertools as it
+import pandas as pd
+from scipy.integrate import solve_ivp
 
-  import matplotlib.pyplot as plt
-  import seaborn as sns
-
-  import plotly.express as px
-  import plotly.graph_objects as go
-  import dash
-  from dash import dcc, html
-  import dash_core_components as dcc
-  import dash_html_components as html
-  from dash.dependencies import Input, Output
+import plotly.express as px
+import plotly.graph_objects as go
+import dash
+from dash import dcc, html
+from dash.dependencies import Input, Output
 
 """## Model definitions"""
 
