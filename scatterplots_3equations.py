@@ -1,3 +1,4 @@
+# pip install dash plotly
 import numpy as np
 import pandas as pd
 from scipy.integrate import solve_ivp
@@ -13,7 +14,6 @@ from dash import dcc, html, ctx, callback, Patch
 from dash.dependencies import Input, Output, State
 
 # Model definitions
-
 
 def gene_expression_eq0(t, x, phi, s, delta, A):
     '''
@@ -64,7 +64,7 @@ def gene_expression_eq2(t, x, phi, s, delta, A, E, S, Ke1, Ke2, Ks1, Ks2):
 
     return phi * s * A * ((E/Ke1 + 1)*(A + Ke2))/((A + Ks2)*(1+S/Ks1)) - x*delta
 
-
+# Function for solving the equation
 def solve_eq(eq, x0, params, t_span = (0, 10), nsteps=10):
     # solving the equation numerically
     solution  = solve_ivp(
@@ -78,7 +78,6 @@ def solve_eq(eq, x0, params, t_span = (0, 10), nsteps=10):
 
 
 # Generative functions
-
 def sample_parameters(equation_num, params, n_genes,
                       promotor_on_percent=100,
                       only_enh_percent=100, only_sil_percent=0,
@@ -86,7 +85,7 @@ def sample_parameters(equation_num, params, n_genes,
     '''
     equation_num: id of the DE equation, {0, 1, 2}
     params: params to sample, not mentioned params = default
-    n_genes: numbe of genes to generate
+    n_genes: number of genes to generate
     promotor_on_percent: percent of genes with A=1
     only_enh_percent: percent of genes with S=0, E=1 AMONG GENES WITH A=1
     only_sil_percent: percent of genes with S=1, E=0 AMONG GENES WITH A=1
@@ -177,10 +176,6 @@ def add_noise(xval, lvl_add_noise=0.08, lvl_mult_noise=0.1):
         return log_x
     
     
-
-
-
-
 def generate_sample(equation, variable_params=[], common_parameters=True,
                     percents_dict= {'promotor_on_percent': 100,
                                     'only_enh_percent': 50,
@@ -264,7 +259,6 @@ def generate_sample(equation, variable_params=[], common_parameters=True,
 
 
 # Sample generations
-
 def generate_steady_states(common_parameters=True,
                            variable_params=[],
                            percents_dict= {'promotor_on_percent': 100,
@@ -335,10 +329,9 @@ def generate_steady_states(common_parameters=True,
 
     return df if not store_params else (df, params_df)
 
+
 # APP CREATION
 
-
-# app creation
 external_stylesheets = ['https://codepen.io/chriddyp/pen/bWLwgP.css']
 app = dash.Dash(__name__, external_stylesheets=external_stylesheets)
 
@@ -540,18 +533,6 @@ app.layout = html.Div(children=[
 # interactive part
 
 # data generation callback
-'''
-    common_parameters=False,
-    variable_params=['phi', 's', 'Ke2', 'Ks2', 'n', 'm'],
-    percents_dict= {'promotor_on_percent': 100,
-       'only_enh_percent': 50,
-       'only_sil_percent': 50,
-       'both_enh_sil_percent': 0},
-    variable_x0=True,
-    size=100,
-    timepoints=50,
-    white_noise=False,
-'''
 @callback(
     Output('ode-graph', 'figure', allow_duplicate=True),
     Input('button', 'n_clicks'),
