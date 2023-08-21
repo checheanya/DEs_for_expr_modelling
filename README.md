@@ -23,5 +23,13 @@ To run the script, just call it from the directory where the tool is located:
 ```bash
 python lineplots_2equations.py 
 ```
+for plotting the line plots and
+
+```bash
+python scatterplots_3equations.py 
+```
+for plotting the scatterplots.
+
+
 Then proceed to the link that appears on the screen.
 
