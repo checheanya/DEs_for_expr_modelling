@@ -3,7 +3,7 @@ _by Anna Chechenina, BII, July-September 2023_
 
 The goal of the project is to build modelling setup for robust simulations of bulk gene expression patterns given initial parameter values. In order to build such model we designed a set of chemical reactions that describes events leading to gene expression activation or repression. By adjusting rate constants and initial concentration of the species in the system, one can get simulation of number of transcripts over time. <br>
 
-## One-equation modifications
+## One-equation models
 Firstly, we attempted to model expression by modifying transcriptional model based on Gillespie stochastic algorithm presented in [1]. The initial system contains three ordinary differential equations with five kinetic parameters and considers the following events: promotor activation, promotor inactivation, transcription with amplification, and RNA decay:
 
 $$\begin{cases}
@@ -20,15 +20,12 @@ $$\frac{dx_i(t)}{dt} = p_i \cdot s_i \cdot A_i(t) \cdot \frac{E_i(t)^n}{E_i(t)^n
 Second version:
 $$\frac{dx_i(t)}{dt} = p_i \cdot s_i \cdot A_i(t) \cdot \frac{(E_i(t)/K_e1 + 1)(A_i(t)+K_e2)}{(A_i(t)+K_s2)(1+S_i(t)/K_s1)} - q_ix_i(t)$$
 
+For both models we performed simulations and parameter space exploration. However, neith 
+You can find full code with runs and comments in the notebook `ODE_modellng_part1.ipynb`. 
 
-build a model using [GillesPy2](https://github.com/StochSS/GillesPy2/tree/main) library in python
+In order to better visualise the parameter values we made the Ploty application where the user can select initial parameters for the model, run the simulation and check the trajectory. Follow the instruction below to download and run the script:
 
-This repository contains code for building the model and reproducing plots for results analysis. There are three folders containing separate parts of the project:
-
-**1. ATAC-seq data distribution and noise exploration.** 
-This folder contains code to perform analysis on selected datasets (see details in the notebooks) and to explore corresponding distributions.  
-
-### Installation
+#### Interactive parameter exploration. Installation
 
 To get the scripts clone the git repository:
 
@@ -43,7 +40,7 @@ conda env create -f environment.yml
 conda activate DE_dash
 ```
 
-### Usage
+### Interactive parameter exploration. Usage
 
 To run the script, just call it from the directory where the tool is located:
 
@@ -55,10 +52,14 @@ for plotting the line plots and
 ```bash
 python scatterplots_3equations.py 
 ```
-for plotting the scatterplots.
+for plotting the scatterplots. Then proceed to the link that appears on the screen.
+
+## Mass-reaction based modelling 
 
 
-Then proceed to the link that appears on the screen.
+## ATAC-seq data distribution and noise exploration
+This folder contains code to perform analysis on selected datasets (see details in the notebooks) and to explore corresponding distributions.
+
 
 Sourses:
 1. Piras, V., Tomita, M. & Selvarajoo, K. Transcriptome-wide Variability in Single Embryonic Development Cells. Sci Rep 4, 7137 (2014). https://doi.org/10.1038/srep07137
