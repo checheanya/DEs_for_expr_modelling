@@ -1,4 +1,4 @@
-name: DE_dash
+name: expr_modelling
 channels:
   - conda-forge
 dependencies:
