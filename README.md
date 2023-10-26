@@ -63,7 +63,7 @@ Full set of discussed reactions and equations can be found in the file `part2/Re
 Simulation experiments were performed using Python library [GillesPy2](https://github.com/StochSS/GillesPy2) that allows to construct systems of chemical kinetics reactions and converts it the system of differential equations for each species. 
 
 For full code, simulations and comments, please consult the notebook in the `part2` section. This notebook is quite extensive and covers all analysis from building the model to parameter exploration and actual simulations. You can find the contents in provided notebook helpful for navigating over the document. Since the notebook size is large, you might prefer to view the notebook in [Google Colab](https://drive.google.com/file/d/14BWNZXek6hNR2mW3YLtCV6a9weFNKZT_/view?usp=sharing).
-Additionally, you can find a parameter exploration plots [here](https://docs.google.com/document/d/e/2PACX-1vSMz3o24yA6p8Afb96XpxYsBYigMyanBkF8m0hYsVXj2-iLRETh1Beg08Hjb31t0uFrdeMLiaRruXnI/pub).
+Additionally, you can find a parameter exploration plots [here](https://docs.google.com/document/d/1LRhs0rYeBQFlqQ9LwBn6AmANmCq4d20CM1QVeWyMSxE/edit?usp=sharing).
 
 Sourses:
 1. Piras, V., Tomita, M. & Selvarajoo, K. Transcriptome-wide Variability in Single Embryonic Development Cells. Sci Rep 4, 7137 (2014). https://doi.org/10.1038/srep07137
